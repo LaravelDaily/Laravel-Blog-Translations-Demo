@@ -18,6 +18,10 @@
                             <td>{{ $article->full_text }}</td>
                         </tr>
                     </table>
+
+                    <p>
+                        <a href="{{ route('articles.index') }}">Back to list</a>
+                    </p>
                 </div>
             </div>
         </div>

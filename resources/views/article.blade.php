@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Hello!</div>
+                <div class="card-header">{{ $article->title }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,16 +14,10 @@
                         </div>
                     @endif
 
-                    @foreach($articles as $article)
-                        <div class="mb-4">
-                            <a href="{{ route('article', $article->id) }}">
-                                <h3>{{ $article->title }}</h3>
-                            </a>
-                            <p>{{ Str::limit($article->full_text, 200) }}</p>
-                        </div>
-                    @endforeach
-
-                    {{ $articles->links() }}
+                    <p>{{ $article->full_text }}</p>
+                    <p>
+                        <a href="{{ route('home') }}">Back to home</a>
+                    </p>
                 </div>
             </div>
         </div>
