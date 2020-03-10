@@ -10,4 +10,9 @@ class Article extends Model
         'title',
         'full_text',
     ];
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class, 'article_id');
+    }
 }

@@ -17,6 +17,8 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('article/{article}', 'HomeController@article')->name('article');
 
+Route::post('article/{article}', 'HomeController@storeComment')->name('article.storeComment');
+
 Auth::routes(['register' => false]);
 
 Route::redirect('/home', '/');
