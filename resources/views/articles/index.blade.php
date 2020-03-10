@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header">Articles</div>
 
@@ -21,9 +21,9 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <td>Title</td>
-                                <td>Full Text</td>
-                                <td>&nbsp;</td>
+                                <th>Title</th>
+                                <th>Full Text</th>
+                                <th>&nbsp;</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -43,7 +43,7 @@
                                         <form action="{{ route('articles.destroy', $article->id) }}" method="POST" style="display: inline-block;">
                                             @method('DELETE')
                                             @csrf
-                                            <input type="submit" class="btn btn-sm btn-danger" value="Delete">
+                                            <input type="submit" class="btn btn-sm btn-danger mb-2" value="Delete">
                                         </form>
                                     </td>
                                 </tr>

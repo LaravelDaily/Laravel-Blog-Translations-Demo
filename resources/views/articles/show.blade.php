@@ -10,11 +10,11 @@
                 <div class="card-body">
                     <table class="table">
                         <tr>
-                            <td width="100">Title</td>
+                            <th width="100">Title</th>
                             <td>{{ $article->title }}</td>
                         </tr>
                         <tr>
-                            <td>Full Text</td>
+                            <th>Full Text</th>
                             <td>{{ $article->full_text }}</td>
                         </tr>
                     </table>
