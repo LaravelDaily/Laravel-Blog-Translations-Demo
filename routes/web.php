@@ -25,4 +25,10 @@ Route::redirect('/home', '/');
 
 Route::group(['middleware' => ['auth']], function () {
     Route::resource('articles', 'ArticleController');
+
+    Route::get('comments/{comment}/reply', 'CommentController@reply')->name('comments.reply');
+
+    Route::post('comments/{comment}/reply', 'CommentController@storeReply')->name('comments.storeReply');
+
+    Route::resource('comments', 'CommentController');
 });

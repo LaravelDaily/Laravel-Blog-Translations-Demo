@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreCommentRequest extends FormRequest
+class StoreReplyRequest extends FormRequest
 {
     public function authorize()
     {
@@ -14,20 +14,11 @@ class StoreCommentRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => [
-                'required', 'string'
-            ],
-            'email' => [
-                'required', 'string'
-            ],
             'comment' => [
                 'required', 'string'
             ],
-            'subscribed' => [
-                'boolean'
-            ],
             'article_id' => [
-                'sometimes', 'required'
+                'required', 'integer'
             ],
         ];
     }
