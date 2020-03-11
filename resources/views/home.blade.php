@@ -16,7 +16,7 @@
 
                     @foreach($articles as $article)
                         <div class="mb-4">
-                            <a href="{{ route('article', $article->id) }}">
+                            <a href="{{ route('article', [app()->getLocale(), $article->id]) }}">
                                 <h3>{{ $article->title }}</h3>
                             </a>
                             <p>{{ Str::limit($article->full_text, 200) }}</p>

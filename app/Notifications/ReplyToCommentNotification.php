@@ -46,7 +46,7 @@ class ReplyToCommentNotification extends Notification
                     ->subject(__('Response to a comment'))
                     ->line(__('You have got a response to a comment:'))
                     ->line($this->comment->comment)
-                    ->action(__('Go To Article'), route('article', $this->comment->article->id))
+                    ->action(__('Go To Article'), route('article', [app()->getLocale(), $this->comment->article->id]))
                     ->line(__('Thank you for using our application!'));
     }
 }

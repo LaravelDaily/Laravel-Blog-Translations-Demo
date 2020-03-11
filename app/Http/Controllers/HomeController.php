@@ -9,14 +9,17 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $articles = Article::orderBy('id', 'DESC')->paginate(5);
+        $articles = Article::translatedIn(app()->getLocale())
+            ->orderBy('id', 'DESC')
+            ->paginate(5);
 
         return view('home', compact('articles'));
     }
 
-    public function article(Article $article)
+    public function article($locale, $id)
     {
-        $article->load('comments');
+        $article = Article::with('comments')
+            ->findOrFail($id);
 
         return view('article', compact('article'));
     }

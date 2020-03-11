@@ -13,9 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/', function () {
+    return redirect()->route('home-locale', app()->getLocale());
+})->name('home');
 
-Route::get('article/{article}', 'HomeController@article')->name('article');
+Route::group(['prefix' => '{locale}', 'where' => ['locale' => '[a-zA-Z]{2}']], function () {
+    Route::get('/', 'HomeController@index')->name('home-locale');
+
+    Route::get('article/{id}', 'HomeController@article')->name('article');
+});
 
 Route::post('article/{article}', 'HomeController@storeComment')->name('article.storeComment');
 
