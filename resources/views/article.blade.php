@@ -29,7 +29,7 @@
                     @empty
                         <div class="row">
                             <div class="col">
-                                <p>There are no comments.</p>
+                                <p>{{ __('There are no comments') }}</p>
                             </div>
                         </div>
                     @endforelse
@@ -37,7 +37,7 @@
                     <form action="{{ route('article.storeComment', $article->id) }}" method="POST">
                         @csrf
                         <div class="form-group">
-                            <label for="name">Name</label>
+                            <label for="name">{{ __('Name') }}</label>
                             <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" required>
                             @error('name')
                                 <span class="invalid-feedback" role="alert">
@@ -46,7 +46,7 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="email">Email</label>
+                            <label for="email">{{ __('Email') }}</label>
                             <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" required>
                             @error('email')
                                 <span class="invalid-feedback" role="alert">
@@ -55,7 +55,7 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="comment">Leave a comment</label>
+                            <label for="comment">{{ __('Comment') }}</label>
                             <textarea class="form-control @error('comment') is-invalid @enderror" id="comment" name="comment" rows="3" required></textarea>
                             @error('comment')
                                 <span class="invalid-feedback" role="alert">
@@ -65,17 +65,17 @@
                         </div>
                         <div class="form-check">
                             <input type="checkbox" class="form-check-input @error('subscribed') is-invalid @enderror" id="subscribed" name="subscribed" value="1">
-                            <label class="fomr-check-label" for="subscribed">Subscribed to replies</label>
+                            <label class="fomr-check-label" for="subscribed">{{ __('Subscribed to replies') }}</label>
                             @error('subscribed')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary">{{ __('Submit') }}</button>
                     </form>
                     <p class="mt-2">
-                        <a href="{{ route('home') }}">Back to home</a>
+                        <a href="{{ route('home') }}">{{ __('Back to home') }}</a>
                     </p>
                 </div>
             </div>

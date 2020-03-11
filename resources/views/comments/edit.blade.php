@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Create Comment</div>
+                <div class="card-header">{{ __('Edit Comment') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('comments.update', $comment->id) }}">
@@ -13,7 +13,7 @@
                         @method('PUT')
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name', $comment->name) }}" required>
@@ -27,7 +27,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">Email</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Email') }}</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email', $comment->email) }}" required>
@@ -41,7 +41,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="comment" class="col-md-4 col-form-label text-md-right">Comment</label>
+                            <label for="comment" class="col-md-4 col-form-label text-md-right">{{ __('Comment') }}</label>
 
                             <div class="col-md-6">
                                 <textarea name="comment" id="comment" class="form-control @error('comment') is-invalid @enderror" rows="8" required>{{ old('comment', $comment->comment) }}</textarea>
@@ -55,7 +55,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="subscribed" class="col-md-4 col-form-label text-md-right">Subscribed to replies</label>
+                            <label for="subscribed" class="col-md-4 col-form-label text-md-right">{{ __('Subscribed to replies') }}</label>
 
                             <div class="col-md-6 mt-2">
                                 <input type="hidden" name="subscribed" value="0">
@@ -70,7 +70,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="article" class="col-md-4 col-form-label text-md-right">Article</label>
+                            <label for="article" class="col-md-4 col-form-label text-md-right">{{ __('Article') }}</label>
 
                             <div class="col-md-6">
                                 <select id="article" class="form-control @error('article_id') is-invalid @enderror" name="article_id" required>
@@ -90,7 +90,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    Edit
+                                    {{ __('Edit') }}
                                 </button>
                             </div>
                         </div>

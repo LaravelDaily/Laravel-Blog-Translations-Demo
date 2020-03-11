@@ -30,7 +30,7 @@ class CommentController extends Controller
     {
         Comment::create($request->validated());
 
-        return redirect()->route('comments.index')->with('status', 'New comment has been created');
+        return redirect()->route('comments.index')->with('status', __('New comment has been created'));
     }
 
     public function show(Comment $comment)
@@ -52,14 +52,14 @@ class CommentController extends Controller
     {
         $comment->update($request->validated());
 
-        return redirect()->route('comments.index')->with('status', 'The comment has been edited');
+        return redirect()->route('comments.index')->with('status', __('The comment has been edited'));
     }
 
     public function destroy(Comment $comment)
     {
         $comment->delete();
 
-        return redirect()->back()->with('status', 'The comment has been deleted');
+        return redirect()->back()->with('status', __('The comment has been deleted'));
     }
 
     public function reply(Comment $comment)
@@ -84,6 +84,6 @@ class CommentController extends Controller
                         ->notify(new ReplyToCommentNotification($responseComment));
         }
 
-        return redirect()->route('comments.index')->with('status', 'The comment has been replied');
+        return redirect()->route('comments.index')->with('status', __('The comment has been replied'));
     }
 }

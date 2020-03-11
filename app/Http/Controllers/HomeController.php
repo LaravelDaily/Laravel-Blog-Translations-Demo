@@ -25,6 +25,6 @@ class HomeController extends Controller
     {
         $article->comments()->create($request->validated());
 
-        return redirect()->back()->with('status', 'New comment has been posted');
+        return redirect()->back()->with('status', __('New comment has been posted'));
     }
 }

@@ -35,10 +35,10 @@
                     <ul class="navbar-nav mr-auto">
                         @auth
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('articles.index') }}">Articles</a>
+                                <a class="nav-link" href="{{ route('articles.index') }}">{{ __('Articles') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('comments.index') }}">Comments</a>
+                                <a class="nav-link" href="{{ route('comments.index') }}">{{ __('Comments') }}</a>
                             </li>
                         @endauth
                     </ul>

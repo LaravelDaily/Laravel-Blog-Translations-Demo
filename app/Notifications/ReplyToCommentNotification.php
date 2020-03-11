@@ -43,10 +43,10 @@ class ReplyToCommentNotification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->subject('Response to a comment')
-                    ->line('You have got a response to a comment:')
+                    ->subject(__('Response to a comment'))
+                    ->line(__('You have got a response to a comment:'))
                     ->line($this->comment->comment)
-                    ->action('Go To Article', route('article', $this->comment->article->id))
-                    ->line('Thank you for using our application!');
+                    ->action(__('Go To Article'), route('article', $this->comment->article->id))
+                    ->line(__('Thank you for using our application!'));
     }
 }

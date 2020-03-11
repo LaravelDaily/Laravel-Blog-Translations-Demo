@@ -24,7 +24,7 @@ class ArticleController extends Controller
     {
         Article::create($request->validated());
 
-        return redirect()->route('articles.index')->with('status', 'New article has been created');
+        return redirect()->route('articles.index')->with('status', __('New article has been created'));
     }
 
     public function show(Article $article)
@@ -41,13 +41,13 @@ class ArticleController extends Controller
     {
         $article->update($request->validated());
 
-        return redirect()->route('articles.index')->with('status', 'The article has been edited');
+        return redirect()->route('articles.index')->with('status', __('The article has been edited'));
     }
 
     public function destroy(Article $article)
     {
         $article->delete();
 
-        return redirect()->back()->with('status', 'The article has been deleted');
+        return redirect()->back()->with('status', __('The article has been deleted'));
     }
 }
