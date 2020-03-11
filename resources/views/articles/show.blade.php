@@ -10,12 +10,20 @@
                 <div class="card-body">
                     <table class="table">
                         <tr>
-                            <th width="100">{{ __('Title') }}</th>
-                            <td>{{ $article->title }}</td>
+                            <th width="100">{{ __('Title') }} (EN)</th>
+                            <td>{{ optional($article->translate('en'))->title }}</td>
                         </tr>
                         <tr>
-                            <th>{{ __('Full Text') }}</th>
-                            <td>{{ $article->full_text }}</td>
+                            <th>{{ __('Full Text') }} (EN)</th>
+                            <td>{{ optional($article->translate('en'))->full_text }}</td>
+                        </tr>
+                        <tr>
+                            <th width="100">{{ __('Title') }} (LT)</th>
+                            <td>{{ optional($article->translate('lt'))->title }}</td>
+                        </tr>
+                        <tr>
+                            <th>{{ __('Full Text') }} (LT)</th>
+                            <td>{{ optional($article->translate('lt'))->full_text }}</td>
                         </tr>
                     </table>
 

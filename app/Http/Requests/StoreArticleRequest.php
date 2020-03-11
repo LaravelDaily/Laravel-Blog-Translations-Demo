@@ -14,12 +14,18 @@ class StoreArticleRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => [
-                'required', 'string'
+            'en_title' => [
+                'required_without:lt_title,lt_full_text', 'required_with:en_full_text'
             ],
-            'full_text' => [
-                'required', 'string'
-            ]
+            'en_full_text' => [
+                'required_without:lt_title,lt_full_text', 'required_with:en_title'
+            ],
+            'lt_title' => [
+                'required_without:en_title,en_full_text', 'required_with:lt_full_text'
+            ],
+            'lt_full_text' => [
+                'required_without:en_title,en_full_text', 'required_with:lt_title'
+            ],
         ];
     }
 }
