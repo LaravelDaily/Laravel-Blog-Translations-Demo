@@ -13,14 +13,29 @@ class ArticlesTableSeeder extends Seeder
      */
     public function run()
     {
-        $faker = Faker::create();
+        Article::create([
+            'en' => [
+                'title'     => 'Only English article example',
+                'full_text' => 'Only English article example\'s text',
+            ]
+        ]);
 
-        for($i = 1; $i <= 5; $i++)
-        {
-            Article::create([
-                'title'     => $faker->sentence,
-                'full_text' => $faker->paragraph,
-            ]);
-        }
+        Article::create([
+            'lt' => [
+                'title'     => 'Tik lietuviško straipsnio pavyzdys',
+                'full_text' => 'Tik lietuviško straipsnio pavyzdžio tekstas',
+            ],
+        ]);
+
+        Article::create([
+            'en' => [
+                'title'     => 'English and Lithuanian article example',
+                'full_text' => 'English and Lithuanian article example\'s text',
+            ],
+            'lt' => [
+                'title'     => 'Angliško ir lietuviško straipsnio pavyzdys',
+                'full_text' => 'Angliško ir lietuviško straipsnio pavyzdžio tekstas',
+            ],
+        ]);
     }
 }
