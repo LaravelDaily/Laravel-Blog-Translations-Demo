@@ -29,8 +29,8 @@
                         <tbody>
                             @foreach($articles as $article)
                                 <tr>
-                                    <td>{{ $article->title ?? $article->translate('lt')->title }}</td>
-                                    <td>{{ Str::limit($article->full_text ?? $article->translate('lt')->full_text, 150) }}</td>
+                                    <td>{{ $article->translate('en')->title ?? optional($article->translate('lt'))->title }}</td>
+                                    <td>{{ Str::limit($article->translate('en')->full_text ?? optional($article->translate('lt'))->full_text, 150) }}</td>
                                     <td>
                                         <a class="btn btn-sm btn-primary mb-2" href="{{ route('articles.show', $article->id) }}">
                                             {{ __('View') }}
